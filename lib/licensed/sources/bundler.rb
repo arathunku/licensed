@@ -346,7 +346,7 @@ module Licensed
 
       # Returns the ruby version found in the bundler environment
       def host_ruby_version
-        Licensed::Shell.execute(*ruby_command_args("ruby", "-e", "puts Gem::ConfigMap[:ruby_version]"))
+        Licensed::Shell.execute(*ruby_command_args("ruby", "-e", "puts RbConfig::CONFIG[\"ruby_version\"]"))
       end
     end
   end
